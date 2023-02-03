@@ -1,0 +1,27 @@
+<h1>Suas notas:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Título:</th>
+      <th scope="col">Ações:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th scope="row">01</th>
+      <td class="title-column">
+        <a href="#">Minha tarefa</a>
+      </td>
+      <td class="actions-column">
+        <a href="#" class="btn btn-primary">Editar</a>
+        <form action="notes/delete" method="POST">
+          <input type="hidden" name="id" value="01">
+          <input type="submit" class="btn btn-danger" value="Remover">
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
