@@ -34,3 +34,26 @@ db.Transaction.aggregate([
   { $match: { count_usernames : 1 } },
 ])
 ```
+
+```
+inner join:
+
+db.Data.find() // metadataId
+db.Metadata.find() // _id
+
+db.getCollection('Data').aggregate([
+  {
+    $lookup: {
+      from: "Metadata",
+      localField: "metadataId",
+      foreignField: "_id",
+      as: "metadata_docs"
+    }
+  },
+  {
+    $match: {
+        "metadata_docs": {$ne: []}
+    }
+  }
+])
+```
