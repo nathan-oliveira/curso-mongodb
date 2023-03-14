@@ -42,6 +42,7 @@ db.Data.find() // metadataId
 db.Metadata.find() // _id
 
 db.getCollection('Data').aggregate([
+  { $match: { _id: ObjectId("5fa2b00432192830234af5f6") } },
   {
     $lookup: {
       from: "Metadata",
@@ -52,7 +53,7 @@ db.getCollection('Data').aggregate([
   },
   {
     $match: {
-        "metadata_docs": {$ne: []}
+      "metadata_docs": {$ne: []}
     }
   }
 ])
