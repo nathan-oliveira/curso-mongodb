@@ -7,7 +7,7 @@ Ordenação asc: { $sort: { createdAt: 1 } },
 ```
 db.Transaction.aggregate([
   { $sort: { createdAt: -1 } },
-  { $match: { usernames: "vd390@acaciaconsultoria.com.br" } },
+  { $match: { usernames: "vd390@teste.com.br" } },
   { $limit: 3 },
   {
     $project: {
